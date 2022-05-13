@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO com Javascript</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Minha Loja 1.0</h1>
+    </header>
+
+    <main>
+        <section>
+            <div class="container-topo">
+                <h1>Produtos</h1>
+                <span>Lista de produtos da minha loja</span>   
+            </div>
+            <div class="container-incluir-produto">
+                <div class="container-flex">
+                    <div class="container-inputs">
+                        <h3>Produto</h3>
+                        <input type="text">
+                    </div>
+                    <div class="container-inputs">
+                        <h3>Preço</h3>
+                        <input type="number">
+                    </div>
+                </div>
+                <div>
+                    <button onclick="produto.adicionar()">Adicionar</button>
+                    <button onclick="produto.excluir()">Deletar</button>
+                </div>
+            </div>
+        </section>
+        <div>
+            <table>
+                <thead>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mesa para sala</td>
+                        <td>1900</td>
+                        <td><img src="img/edit.svg" alt=""></td>
+                        <td><img src="img/delete.svg" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>  
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
