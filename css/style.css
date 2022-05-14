@@ -12,6 +12,7 @@ header{
     color: white;
     text-align: center;
     padding: 10px;
+    width: 100%;
 }
 
 main{
@@ -33,11 +34,14 @@ section{
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
+    margin-bottom: 30px;
+    width: 100%;
 }
 
 .container-flex{
     display: flex;
     margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 .container-inputs{
@@ -45,7 +49,7 @@ section{
 }
 
 input{
-    padding: 5px;
+    padding: 8px 15px;
     border-radius: 5px;
     border-style: none;
     border: 1px solid #ccc;
@@ -53,7 +57,7 @@ input{
 }
 
 button{
-    padding: 15px;
+    padding: 15px 20px;
     margin-right: 10px;
     border-radius: 5px;
     border-style: none;
@@ -62,9 +66,62 @@ button{
     font-weight: bold;
     font-size: 16px;
     transition: all ease .3s;
+    cursor: pointer;
+    
 }
 
 button:hover{
     background-color: rgb(115, 28, 197);
 }
 
+table{
+    border-collapse: collapse;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+thead {
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: rgba(211, 211, 211, 0.479);
+}
+
+th, tbody, tr, td {
+    border: 1px solid rgba(204, 204, 204, 0.562);
+    text-align: center;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.icon {
+    width: 30px;
+    background-color: rgba(211, 211, 211, 0.116);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.icon:hover{
+    background-color: rgba(211, 211, 211, 0.253);
+}
+
+th:nth-child(2) {
+    text-align: left;
+    padding-left: 30px;
+    
+}
+
+td:nth-child(2) {
+    text-align: left;
+    padding-left: 30px;
+}
+
+td:nth-child(4){
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-style: none;
+}
