@@ -89,7 +89,7 @@ thead {
     background-color: rgba(211, 211, 211, 0.479);
 }
 
-th, tbody, tr, td {
+th, .tbody, tr, td {
     border: 1px solid rgba(204, 204, 204, 0.562);
     text-align: center;
     border-collapse: collapse;

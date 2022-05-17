@@ -25,16 +25,16 @@
                 <div class="container-flex">
                     <div class="container-inputs">
                         <h3>Produto</h3>
-                        <input type="text">
+                        <input type="text" id="produto">
                     </div>
                     <div class="container-inputs">
                         <h3>Preço</h3>
-                        <input type="number">
+                        <input type="number" id="preco">
                     </div>
                 </div>
                 <div>
-                    <button onclick="produto.adicionar()">Adicionar</button>
-                    <button onclick="produto.excluir()">Deletar</button>
+                    <button onclick="produto.salvar()">Salvar</button>
+                    <button onclick="produto.cancelar()">Cancelar</button>
                 </div>
             </div>
         </section>
@@ -46,34 +46,8 @@
                     <th>Preço</th>
                     <th>Ações</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Mesa para sala</td>
-                        <td>1900</td>
-                        <td>
-                            <img class="icon" src="img/edit.svg" alt="">
-                            <img class="icon" src="img/delete.svg" alt="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Mesa para sala</td>
-                        <td>1900</td>
-                        <td>
-                            <img class="icon" src="img/edit.svg" alt="">
-                            <img class="icon" src="img/delete.svg" alt="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Mesa para sala</td>
-                        <td>1900</td>
-                        <td>
-                            <img class="icon" src="img/edit.svg" alt="">
-                            <img class="icon" src="img/delete.svg">
-                        </td>
-                    </tr>
+                <tbody id="tbody">
+ 
                 </tbody>
             </table>
         </div>  
