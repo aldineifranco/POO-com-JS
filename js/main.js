@@ -3,6 +3,7 @@ class Produto {
     constructor() {
         this.id = 1
         this.arrayProdutos = [];
+        this.editId = null;
     }
 
     salvar(){
@@ -11,7 +12,12 @@ class Produto {
         console.log(produto);
 
         if(this.validaCampo(produto)) {
-            this.adicionar(produto);
+            if(this.editId == null){
+                this.adicionar(produto);
+            } else {
+                this.atualizar(this.editId, produto);
+            }
+            
         }
 
         this.listaTabela();
@@ -39,6 +45,8 @@ class Produto {
 
             td_acoes.appendChild(imgEdit);
 
+            imgEdit.setAttribute("onclick", "produto.preparaEdicao ("+ JSON.stringify(this.arrayProdutos[i]) + ")");
+
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/delete.svg';
 
@@ -55,8 +63,28 @@ class Produto {
     }
 
     adicionar(produto){
+        produto.precoProduto = parseFloat(produto.precoProduto)
         this.arrayProdutos.push(produto);
         this.id++;
+    }
+
+    atualizar(id, produto) {
+        for (let i = 0; i < this.arrayProdutos.length; i++){
+            if(this.arrayProdutos[i].id == id) {
+                this.arrayProdutos[i].nomeProduto = produto.nomeProduto;
+                this.arrayProdutos[i].precoProduto = produto.precoProduto;
+            }
+        }
+    }
+
+
+    preparaEdicao(dados){
+        this.editId = dados.id;
+
+        document.querySelector('#produto').value = dados.nomeProduto;
+        document.querySelector('#preco').value = dados.precoProduto;
+
+        document.querySelector('#btn1').innerText = 'Atualizar'
     }
 
     lerDados(){
@@ -90,20 +118,24 @@ class Produto {
     cancelar() {
         document.querySelector("#produto").value = '';
         document.querySelector("#preco").value = '';
+
+        document.querySelector('#btn1').innerText = 'Salvar'
+        this.editId = null;
     }
 
     deletar(id) {
 
-        let tbody = document.querySelector("#tbody");
+        if(confirm('Deseja realmente deletar o produto ' + id)){
+            let tbody = document.querySelector("#tbody");
 
-        for(let i=0; i < this.arrayProdutos.length; i++){
-            if(this.arrayProdutos[i].id == id){
-                this.arrayProdutos.splice(i, 1);
-                tbody.deleteRow(i);
+            for(let i=0; i < this.arrayProdutos.length; i++){
+                if(this.arrayProdutos[i].id == id){
+                    this.arrayProdutos.splice(i, 1);
+                    tbody.deleteRow(i);
+                }
             }
         }
 
-        this.insertRow();
     }
 }
 
