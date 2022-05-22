@@ -96,22 +96,16 @@ th, .tbody, tr, td {
     padding: 10px;
 }
 
-.icon {
-    width: 30px;
+img {
+    width: 20px;
     background-color: rgba(211, 211, 211, 0.116);
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
 }
 
-.icon:hover{
+img:hover{
     background-color: rgba(211, 211, 211, 0.253);
-}
-
-th:nth-child(2) {
-    text-align: left;
-    padding-left: 30px;
-    
 }
 
 td:nth-child(2) {
@@ -120,6 +114,7 @@ td:nth-child(2) {
 }
 
 td:nth-child(4){
+
     display: flex;
     align-items: center;
     justify-content: space-around;

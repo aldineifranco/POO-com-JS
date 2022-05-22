@@ -42,7 +42,14 @@ class Produto {
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/delete.svg';
 
+            // setAtribute cria a função de deletar no ícone em Ações.
+
+            imgDelete.setAttribute("onclick", "produto.deletar("+ this.arrayProdutos[i].id + ")")
+
             td_acoes.appendChild(imgDelete);
+
+            td_acoes.classList.add('img');
+            td_acoes.classList.add('td:nth-child(4)')
      
         }
     }
@@ -83,6 +90,20 @@ class Produto {
     cancelar() {
         document.querySelector("#produto").value = '';
         document.querySelector("#preco").value = '';
+    }
+
+    deletar(id) {
+
+        let tbody = document.querySelector("#tbody");
+
+        for(let i=0; i < this.arrayProdutos.length; i++){
+            if(this.arrayProdutos[i].id == id){
+                this.arrayProdutos.splice(i, 1);
+                tbody.deleteRow(i);
+            }
+        }
+
+        this.insertRow();
     }
 }
 
